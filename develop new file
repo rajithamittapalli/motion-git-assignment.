@@ -1,0 +1,25 @@
+git clone https://github.com/rajithamittapalli/motion-git-assignment..git
+cd motion-git-assignment
+git init
+git add README.md
+git commit -m "Add README file with project description"
+git branch feature-update
+git checkout feature-update
+git branch feature-update
+git checkout feature-update
+git checkout -b feature-update
+# Motion Git Assignment
+
+This project is a demonstration of Git version control for an rajitha assignment.
+
+## Installation
+1. Clone the repository:
+2. Navigate into the directory:
+
+## Usage
+Run the following command to initialize:
+Save the file.
+
+### **Step 9: Stage the Modified `README.md`**
+```sh
+git add README.md
