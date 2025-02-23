@@ -1,0 +1,15 @@
+Started by user RAJITHA
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins in C:\ProgramData\Jenkins\.jenkins\workspace\azurejenkins-setup.md
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Hello)
+[Pipeline] echo
+Hello World
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS
