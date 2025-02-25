@@ -1,0 +1,84 @@
+1. Fetch and List Available Branches
+Ensure your local repository is up-to-date with the latest remote branches:
+
+sh
+Copy
+Edit
+git fetch --all
+git branch -r
+Look for the relevant IaC-related branches in the output.
+
+2. Checkout and Review Each Branch
+Terraform Branch
+sh
+Copy
+Edit
+git checkout terraform-branch
+Review Terraform scripts (.tf files).
+Check for proper module usage, variable definitions, and outputs.
+Ensure best practices like state file management and remote backend configurations.
+Validate syntax:
+sh
+Copy
+Edit
+terraform fmt -recursive
+terraform validate
+Run a plan to check for potential issues:
+sh
+Copy
+Edit
+terraform plan
+CloudFormation Branch
+sh
+Copy
+Edit
+git checkout cloudformation-branch
+Review YAML/JSON templates for syntax errors and logical consistency.
+Check for parameterization and modularity.
+Validate the template:
+sh
+Copy
+Edit
+aws cloudformation validate-template --template-body file://template.yaml
+Ensure security best practices like IAM least privilege principles.
+ARM Templates Branch
+sh
+Copy
+Edit
+git checkout arm-branch
+Validate JSON structure and parameter files.
+Ensure proper resource dependencies and naming conventions.
+Test deployment using:
+sh
+Copy
+Edit
+az deployment group validate --resource-group <RG_NAME> --template-file template.json --parameters parameters.json
+Verify role assignments and access controls.
+Ansible Branch
+sh
+Copy
+Edit
+git checkout ansible-branch
+Check for structured playbooks and roles (playbook.yml, roles/, inventory/).
+Ensure variables are externalized in vars and defaults for reusability.
+Test syntax:
+sh
+Copy
+Edit
+ansible-playbook playbook.yml --syntax-check
+Run playbooks in dry-run mode to catch issues:
+sh
+Copy
+Edit
+ansible-playbook playbook.yml --check
+3. Identify Documentation Gaps
+Verify if each branch contains relevant documentation (README, usage guide).
+Ensure consistency across tools (installation, configuration, deployment steps).
+Note missing sections that need to be added or improved.
+4. Merge to Main & Proceed with Review
+Once all reviews are complete, merge the branches into main (if they are stable).
+Create a new branch for final documentation review:
+sh
+Copy
+Edit
+git checkout -b feature-final-iac-review
